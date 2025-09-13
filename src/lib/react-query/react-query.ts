@@ -27,8 +27,6 @@ import { ResetPasswordType } from "../../Pages/Auth/ResetPassword/ResetPassword.
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
 import { setCartData } from "../redux/cartSlice";
-import { CartSliceType } from "../redux/cartSlice.types";
-import { AxiosResponse } from "axios";
 import { setWishlistData } from "../redux/wishlistSlice";
 
 export function useSignup() {
@@ -62,7 +60,7 @@ export function useResetPassword() {
 }
 
 export function useGetAllProducts(page: number) {
-  return useQuery<AxiosResponse<CartSliceType>>({
+  return useQuery({
     queryKey: ["allProducts"],
     queryFn: () => getAllProducts(page),
     placeholderData: (prevData) => prevData,

@@ -10,4 +10,4 @@ export type ProductType = {
   ratingsAverage: string;
   sold: string;
   ratingsQuantity:string;
-};
+} ;

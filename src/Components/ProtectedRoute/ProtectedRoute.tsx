@@ -6,5 +6,5 @@ export default function ProtectedRoute({ children }: { children: ReactNode }) {
   if (userToken) {
     return children;
   }
-  return <Navigate to='/sign-in' />;
+  return <Navigate to='/sign-in' />;  
 }

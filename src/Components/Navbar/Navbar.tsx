@@ -57,7 +57,7 @@ export default function Navbar() {
               </Link>
             </div>
             <ul className="hidden lg:flex items-center mx-auto justify-start gap-6 md:gap-8 py-3 sm:justify-center">
-              {userToken && <>
+              {<>
                 <li>
                   <NavLink to="/" className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
                     Home
@@ -68,7 +68,7 @@ export default function Navbar() {
                     Products
                   </NavLink>
                 </li>
-                  <li className="shrink-0">
+                <li className="shrink-0">
                   <NavLink to="/categories" className="flex text-sm font-medium  text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
                     Categories
                   </NavLink>
@@ -134,11 +134,11 @@ export default function Navbar() {
               <button id="userDropdownButton1" data-dropdown-toggle="userDropdown1" type="button" className="inline-flex cursor-pointer items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
                 <FaUser className="w-5 h-5 me-1" />
               </button>
-              <div id="userDropdown1" className="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
+              {userToken && <div id="userDropdown1" className="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
                 <button onClick={hanldeLogout} className="p-2 text-sm font-medium text-gray-900 cursor-pointer dark:text-white">
                   <span className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm"> Sign Out </span>
                 </button>
-              </div>
+              </div>}
             </div>
             <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1" aria-controls="ecommerce-navbar-menu-1" aria-expanded="false" className="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">
               <span className="sr-only">
