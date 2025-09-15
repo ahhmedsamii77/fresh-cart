@@ -93,7 +93,7 @@ export default function Navbar() {
               <FaMoon className="w-5 h-5  dark:hidden" />
               <FaSun className="w-5 h-5 text-white  hidden dark:block" />
             </button>
-            <div>
+          {userToken &&  <div>
               <Link className="inline-flex mr-5 cursor-pointer items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white" to='/wishlist'>
                 <div className='relative'>
                   <FaHeart className="w-5 h-5 lg:me-1" />
@@ -129,7 +129,7 @@ export default function Navbar() {
                 </div>)}
                 <Link to="/cart" className="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" role="button"> Proceed to Checkout </Link>
               </div>
-            </div>
+            </div>}
             {userToken && <div>
               <button id="userDropdownButton1" data-dropdown-toggle="userDropdown1" type="button" className="inline-flex cursor-pointer items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
                 <FaUser className="w-5 h-5 me-1" />
