@@ -1,4 +1,4 @@
-  import {  createBrowserRouter, RouterProvider } from "react-router-dom"
+  import {  createHashRouter, RouterProvider } from "react-router-dom"
   import Layout from "./Components/Layout/Layout"
   import Home from "./Pages/Home/Home"
   import Signin from "./Pages/Auth/Signin/Signin"
@@ -21,7 +21,7 @@
   import Checkout from "./Pages/Checkout/Checkout"
   import Orders from "./Pages/Orders/Orders"
   import Categories from "./Pages/Categories/Categories"
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: '', element: <Layout />, children: [
         { index: true, element: <Home /> },
