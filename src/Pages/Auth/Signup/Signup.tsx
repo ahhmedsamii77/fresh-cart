@@ -39,7 +39,7 @@ export default function Signup() {
       email: Yup.string().required('email is required').email('Invalid email'),
       password: Yup.string().required('password is required').min(8, 'password must be at least 8 characters'),
       rePassword: Yup.string().required('password is required').oneOf([Yup.ref('password')], "password don't match confirm-password"),
-      phone: Yup.string().required('phone is required').matches(/^(20)?01[0125][1-9]{8}$/, "Invalid egyption number")
+      phone: Yup.string().required('phone is required').matches(/^(20)?01[0125][0-9]{8}$/, "Invalid egyption number")
     })
   });
   return (
@@ -73,7 +73,7 @@ export default function Signup() {
                 </div>}
               </div>
               <div>
-                <label htmlFor="rePassword" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
+                <label htmlFor="rePassword" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
                 <input value={registerFormik.values.rePassword} onChange={registerFormik.handleChange} onBlur={registerFormik.handleBlur} type="password" name="rePassword" id="rePassword" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                 {registerFormik.errors.rePassword && registerFormik.touched.rePassword && <div className="mt-2 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
                   <span className="font-medium">{registerFormik.errors.rePassword}</span>

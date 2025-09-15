@@ -57,7 +57,7 @@ export default function Navbar() {
               </Link>
             </div>
             <ul className="hidden lg:flex items-center mx-auto justify-start gap-6 md:gap-8 py-3 sm:justify-center">
-              {<>
+              {userToken && <>
                 <li>
                   <NavLink to="/" className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
                     Home
